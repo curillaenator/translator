@@ -1,0 +1,7 @@
+@mixin generate-varaibles($map, $prefix) {
+  @each $name, $variant in $map {
+    @each $variantName, $value in $variant {
+      #{$prefix}-#{$name}-#{$variantName}: #{$value};
+    }
+  }
+}
