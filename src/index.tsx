@@ -1,15 +1,13 @@
 import React, { StrictMode } from "react";
-import { render } from "react-dom";
-
+import ReactDOM from "react-dom/client";
 import { App } from "@src/app/App";
 
 import "@src/index.scss";
 
-render(
+const root = document.querySelector("#root") as Element;
+
+ReactDOM.createRoot(root).render(
   <StrictMode>
-    {/* <BrowserRouter> */}
     <App />
-    {/* </BrowserRouter> */}
-  </StrictMode>,
-  document.getElementById("root")
+  </StrictMode>
 );
