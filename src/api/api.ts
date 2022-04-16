@@ -11,13 +11,24 @@ const base = axios.create({
 interface LanguagesResponse {
   code: number;
   data: Record<string, string>;
-  messager: string;
+  message: string;
 }
 
-interface TranslateArgs {
+export interface TranslateArgs {
   text: string;
   target: string;
   source: string;
+}
+
+interface TranslateResponce {
+  code: number;
+  data: {
+    pairs: { s: string; t: string }[];
+    pronunciation: string;
+    source: any;
+    translation: string;
+  };
+  message: string;
 }
 
 export const api = {
@@ -31,11 +42,11 @@ export const api = {
       });
   },
 
-  translate: (args: TranslateArgs) => {
+  translate: (args: TranslateArgs): Promise<TranslateResponce> => {
     const { text, target, source } = args;
 
     return base
-      .post(`/translate?text=${text}&tl=${target}&sl=${source}`)
+      .get(`/translate?text=${text}&tl=${target}&sl=${source}`)
       .then((r) => r.data)
       .catch((err) => {
         alert("Error! See console!!!");

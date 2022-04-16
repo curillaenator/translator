@@ -1,11 +1,9 @@
 import { ReactText } from "react";
 
-export interface ListItem {
-  title: ReactText;
-  onClick: () => void;
-}
-
 export interface DropdownProps {
   title: ReactText;
-  list: ListItem[];
+  selected: Record<string, string> | null;
+  list: Record<string, string>;
+  maxItems?: number;
+  onSelect: (item: Record<string, string>) => void;
 }

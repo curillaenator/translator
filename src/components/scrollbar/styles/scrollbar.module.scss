@@ -1,0 +1,18 @@
+.scrollbar {
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  padding-right: 8px;
+
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+    margin-left: 0.25rem;
+    border-radius: 0.25rem;
+    background-color: var(--palette-gray-300);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--palette-gray-900);
+    border-radius: 0.25rem;
+  }
+}

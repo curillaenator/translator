@@ -24,7 +24,7 @@
   &_active {
     --icon-translate: rotate(180deg);
     --trigger-background: var(--palette-indigo-500);
-    --trigger-text-color: var(--palette-mono-white);
+    --trigger-text-color: var(--palette-gray-200);
     --trigger-shadow-color: var(--palette-indigo-500);
   }
 
@@ -69,13 +69,11 @@
     flex-direction: column;
     width: 100%;
     min-width: 160px;
-    padding: 8px 16px;
+    padding: 8px 8px 8px 16px;
+    background-color: var(--palette-gray-200);
+    border-radius: 16px;
     animation: list_appear 0.2s ease-out;
     z-index: 1000;
-
-    &_shape {
-      fill: var(--palette-gray-200);
-    }
 
     &_item {
       --item-text-color: var(--palette-gray-500);
@@ -83,6 +81,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-shrink: 0;
+      width: 100%;
       height: 40px;
       color: var(--item-text-color);
       transition: 0.08s linear;

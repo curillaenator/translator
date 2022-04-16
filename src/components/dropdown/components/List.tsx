@@ -1,36 +1,43 @@
 import React, { forwardRef, useCallback } from "react";
 
-import { Shape } from "@src/components/shape";
+import { Scrollbar } from "@src/components/scrollbar";
 
 import { ListProps } from "./interfaces";
 
 import s from "../styles/dropdown.module.scss";
 
+const ITEM_H = 40;
+const PADDING_H = 16;
+
 const List = forwardRef<HTMLDivElement, ListProps>((props, ref) => {
-  const { list, onClose } = props;
+  const { list, maxItems, onSelect, onClose } = props;
 
   const handleClick = useCallback(
-    (itemClick: () => void) => {
-      itemClick();
+    (item: Record<string, string>) => {
+      onSelect(item);
       onClose();
     },
-    [onClose]
+    [onClose, onSelect]
   );
 
   return (
-    <div className={s.list} ref={ref}>
-      <Shape className={s.list_shape} borderRadius={16} isAdaptive />
-
-      {list.map((item) => (
-        <button
-          key={item.title}
-          className={s.list_item}
-          onClick={() => handleClick(item.onClick)}
-          type="button"
-        >
-          {item.title}
-        </button>
-      ))}
+    <div
+      className={s.list}
+      style={{ maxHeight: ITEM_H * maxItems + PADDING_H }}
+      ref={ref}
+    >
+      <Scrollbar>
+        {Object.entries(list).map(([key, value]) => (
+          <button
+            key={value}
+            className={s.list_item}
+            onClick={() => handleClick({ [key]: value })}
+            type="button"
+          >
+            {value}
+          </button>
+        ))}
+      </Scrollbar>
     </div>
   );
 });

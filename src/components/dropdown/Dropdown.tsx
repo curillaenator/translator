@@ -10,7 +10,7 @@ import { DropdownProps } from "./interfaces";
 import s from "./styles/dropdown.module.scss";
 
 export const Dropdown: FC<DropdownProps> = (props) => {
-  const { title, list = [] } = props;
+  const { title, selected, list = {}, maxItems = 6, onSelect } = props;
 
   const { listRef, isOpen, onOpen, onClose } = useDropdown();
 
@@ -20,9 +20,22 @@ export const Dropdown: FC<DropdownProps> = (props) => {
         [s.dropdown_active]: isOpen,
       })}
     >
-      <Trigger title={title} onOpen={onOpen} />
+      <Trigger
+        title={selected ? Object.values(selected)[0] : title}
+        isOpen={isOpen}
+        onOpen={onOpen}
+        onClose={onClose}
+      />
 
-      {isOpen && <List list={list} onClose={onClose} ref={listRef} />}
+      {isOpen && (
+        <List
+          list={list}
+          onClose={onClose}
+          onSelect={onSelect}
+          maxItems={maxItems}
+          ref={listRef}
+        />
+      )}
     </div>
   );
 };

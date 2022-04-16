@@ -6,10 +6,14 @@ import { TriggerProps } from "./interfaces";
 import s from "../styles/dropdown.module.scss";
 
 export const Trigger: FC<TriggerProps> = (props) => {
-  const { title, onOpen } = props;
+  const { title, isOpen, onOpen, onClose } = props;
 
   return (
-    <button className={s.trigger} onClick={onOpen} type="button">
+    <button
+      className={s.trigger}
+      onClick={isOpen ? onClose : onOpen}
+      type="button"
+    >
       <Shape className={s.trigger_shape} isAdaptive />
 
       <span className={s.trigger_title}>{title}</span>
