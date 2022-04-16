@@ -1,0 +1,59 @@
+$colors: ("primary", "secondary", "positive", "attention", "negative");
+$sizes: ("2xl", "xl", "l", "m", "s", "xs");
+
+.button {
+  --button-height: 56px;
+  --button-width: fit-content;
+  --button-gap: 20px;
+  --button-padding: 0 20px;
+  --button-background: var(--palette-indigo-500);
+  --button-shadow-color: transparent;
+  --button-border-radius: 22px;
+  --button-font-size: 16px;
+  --button-font-color: var(--palette-mono-white);
+  --button-icon-size: 24px;
+  --button-direction: row;
+  --button-cursor: pointer;
+  --button-transition: 0.08s linear;
+
+  cursor: var(--button-cursor);
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: var(--button-direction);
+  gap: var(--button-gap);
+  width: var(--button-width);
+  height: var(--button-height);
+  padding: var(--button-padding);
+  box-shadow: 0 4px 16px var(--button-shadow-color);
+  border-radius: var(--button-border-radius);
+  transition: var(--button-transition);
+
+  color: var(--button-font-color);
+  font-weight: 600;
+  font-size: var(--button-font-size);
+
+  &:hover {
+    --button-background: var(--palette-indigo-400);
+    --button-shadow-color: var(--palette-indigo-400);
+  }
+
+  &:active {
+    --button-background: var(--palette-indigo-600);
+    --button-shadow-color: transparent;
+  }
+
+  .button_icon {
+    width: var(--button-icon-size);
+    height: var(--button-icon-size);
+    fill: var(--button-font-color);
+    transition: var(--button-transition);
+  }
+
+  .button_shape {
+    fill: var(--button-background);
+    transition: var(--button-transition);
+  }
+}
