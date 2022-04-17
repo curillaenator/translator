@@ -1,12 +1,20 @@
-import React, { FC } from "react";
+import React, { FC, useRef, useEffect } from "react";
+
 import { Shape } from "@src/components/shape";
+import { Icon } from "@src/components/icon";
 
 import { TriggerProps } from "./interfaces";
 
 import s from "../styles/dropdown.module.scss";
 
 export const Trigger: FC<TriggerProps> = (props) => {
-  const { title, isOpen, onOpen, onClose } = props;
+  const { title, isOpen, search, onSearch, onOpen, onClose } = props;
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    isOpen && inputRef.current?.focus();
+  }, [isOpen]);
 
   return (
     <button
@@ -16,7 +24,19 @@ export const Trigger: FC<TriggerProps> = (props) => {
     >
       <Shape className={s.trigger_shape} isAdaptive />
 
-      <span className={s.trigger_title}>{title}</span>
+      {isOpen && (
+        <div className={s.trigger_search}>
+          <Icon iconName="search" className={s.trigger_search_icon} />
+
+          <input
+            value={search}
+            onChange={(e) => onSearch(e.target.value)}
+            ref={inputRef}
+          />
+        </div>
+      )}
+
+      {!isOpen && <span className={s.trigger_title}>{title}</span>}
 
       <svg
         className={s.trigger_icon}

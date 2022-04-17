@@ -12,7 +12,8 @@ import s from "./styles/dropdown.module.scss";
 export const Dropdown: FC<DropdownProps> = (props) => {
   const { title, selected, list = {}, maxItems = 6, onSelect } = props;
 
-  const { listRef, isOpen, onOpen, onClose } = useDropdown();
+  const { listRef, filteredList, isOpen, search, onSearch, onOpen, onClose } =
+    useDropdown(list);
 
   return (
     <div
@@ -22,14 +23,16 @@ export const Dropdown: FC<DropdownProps> = (props) => {
     >
       <Trigger
         title={selected ? Object.values(selected)[0] : title}
+        search={search}
         isOpen={isOpen}
+        onSearch={onSearch}
         onOpen={onOpen}
         onClose={onClose}
       />
 
       {isOpen && (
         <List
-          list={list}
+          list={filteredList}
           onClose={onClose}
           onSelect={onSelect}
           maxItems={maxItems}

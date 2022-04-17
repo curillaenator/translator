@@ -42,6 +42,26 @@
     border-radius: 22px;
     transition: 0.08s linear;
 
+    &_search {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &_icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        fill: var(--trigger-text-color);
+      }
+
+      & > input {
+        background-color: transparent;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--trigger-text-color);
+      }
+    }
+
     &_shape {
       fill: var(--trigger-background);
     }

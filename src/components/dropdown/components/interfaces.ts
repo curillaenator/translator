@@ -4,6 +4,8 @@ import { ReactText } from "react";
 export interface TriggerProps {
   title: ReactText;
   isOpen: boolean;
+  search: string;
+  onSearch: (value: string) => void;
   onOpen: () => void;
   onClose: () => void;
 }
