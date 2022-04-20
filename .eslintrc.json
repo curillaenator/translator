@@ -34,6 +34,24 @@
     "no-unused-vars": "warn",
     "no-console": "warn",
     "quotes": "warn",
+    "prefer-const": "warn",
+    "jsx-quotes": ["warn", "prefer-double"],
+    "no-duplicate-imports": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ]
+      }
+    ],
     "require-jsdoc": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/ban-ts-comment": "off",
