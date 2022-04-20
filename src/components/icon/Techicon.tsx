@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import { webIcons } from "@src/assets/webIcons";
-import { TechiconProps } from "./interfaces";
+import { webIcons } from '@src/assets/webIcons';
+import { TechiconProps } from './interfaces';
 
-import s from "./styles/icon.module.scss";
+import s from './styles/icon.module.scss';
 
 export const Techicon: FC<TechiconProps> = ({ iconName }) => {
   return (

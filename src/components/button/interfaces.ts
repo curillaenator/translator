@@ -1,14 +1,14 @@
-import { MouseEventHandler } from "react";
-import { IconNames } from "@src/assets/icons";
+import { MouseEventHandler } from 'react';
+import { IconNames } from '@src/assets/icons';
 
 export type ButtonAppearances =
-  | "primary"
-  | "secondary"
-  | "positive"
-  | "attention"
-  | "negative";
+  | 'primary'
+  | 'secondary'
+  | 'positive'
+  | 'attention'
+  | 'negative';
 
-export type ButtonSizes = "2xl" | "xl" | "l" | "m" | "s" | "xs";
+export type ButtonSizes = '2xl' | 'xl' | 'l' | 'm' | 's' | 'xs';
 
 export interface ButtonProps {
   size?: ButtonSizes;
@@ -17,7 +17,7 @@ export interface ButtonProps {
   iconName?: IconNames;
   reversed?: boolean;
   disabled?: boolean;
-  type?: "button" | "submit";
+  type?: 'button' | 'submit';
   className?: string;
   children?: string;
   onClick?: MouseEventHandler<HTMLElement>;

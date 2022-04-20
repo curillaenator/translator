@@ -1,6 +1,6 @@
-import React, { forwardRef, ReactNode } from "react";
+import React, { forwardRef, ReactNode } from 'react';
 
-import s from "./styles/scrollbar.module.scss";
+import s from './styles/scrollbar.module.scss';
 
 interface ScrollbarProps {
   maxHeight?: number;
@@ -8,7 +8,7 @@ interface ScrollbarProps {
 }
 
 const Scrollbar = forwardRef<HTMLDivElement, ScrollbarProps>((props, ref) => {
-  const { maxHeight = "9999px", children } = props;
+  const { maxHeight = '9999px', children } = props;
 
   return (
     <div className={s.scrollbar} style={{ maxHeight }} ref={ref}>
@@ -17,6 +17,6 @@ const Scrollbar = forwardRef<HTMLDivElement, ScrollbarProps>((props, ref) => {
   );
 });
 
-Scrollbar.displayName = "Scrollbar";
+Scrollbar.displayName = 'Scrollbar';
 
 export { Scrollbar };

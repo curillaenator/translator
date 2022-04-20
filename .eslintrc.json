@@ -31,6 +31,9 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "quotes": "warn",
     "require-jsdoc": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/ban-ts-comment": "off",

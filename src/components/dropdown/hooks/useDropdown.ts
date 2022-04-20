@@ -1,11 +1,11 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback } from 'react';
 // import { useClickAway } from "@src/utils";
 
 export const useDropdown = (list: Record<string, string>) => {
   const listRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<string>('');
   const onSearch = useCallback((value: string) => setSearch(value), []);
 
   const onClose = useCallback(() => setIsOpen(false), []);

@@ -1,10 +1,10 @@
-import React, { forwardRef, useCallback } from "react";
+import React, { forwardRef, useCallback } from 'react';
 
-import { Scrollbar } from "@src/components/scrollbar";
+import { Scrollbar } from '@src/components/scrollbar';
 
-import { ListProps } from "./interfaces";
+import { ListProps } from './interfaces';
 
-import s from "../styles/dropdown.module.scss";
+import s from '../styles/dropdown.module.scss';
 
 const ITEM_H = 40;
 const PADDING_H = 16;
@@ -42,6 +42,6 @@ const List = forwardRef<HTMLDivElement, ListProps>((props, ref) => {
   );
 });
 
-List.displayName = "List";
+List.displayName = 'List';
 
 export { List };

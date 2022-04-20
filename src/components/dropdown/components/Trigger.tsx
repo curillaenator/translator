@@ -1,11 +1,11 @@
-import React, { FC, useRef, useEffect } from "react";
+import React, { FC, useRef, useEffect } from 'react';
 
-import { Shape } from "@src/components/shape";
-import { Icon } from "@src/components/icon";
+import { Shape } from '@src/components/shape';
+import { Icon } from '@src/components/icon';
 
-import { TriggerProps } from "./interfaces";
+import { TriggerProps } from './interfaces';
 
-import s from "../styles/dropdown.module.scss";
+import s from '../styles/dropdown.module.scss';
 
 export const Trigger: FC<TriggerProps> = (props) => {
   const { title, isOpen, search, onSearch, onOpen, onClose } = props;

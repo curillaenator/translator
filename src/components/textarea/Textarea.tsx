@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import { TextareaProps } from "./interfaces";
+import { TextareaProps } from './interfaces';
 
-import s from "./styles/textarea.module.scss";
+import s from './styles/textarea.module.scss';
 
 export const Textarea: FC<TextareaProps> = (props) => {
   const { value, onChange } = props;

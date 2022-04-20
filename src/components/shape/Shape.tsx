@@ -1,16 +1,16 @@
-import React, { FC } from "react";
-import cn from "classnames";
-import { useShapeParams } from "./hooks/useShapeParams";
+import React, { FC } from 'react';
+import cn from 'classnames';
+import { useShapeParams } from './hooks/useShapeParams';
 
-import { ShapeProps } from "./interfaces";
+import { ShapeProps } from './interfaces';
 
-import s from "./styles/shape.module.scss";
+import s from './styles/shape.module.scss';
 
 export const Shape: FC<ShapeProps> = ({
   borderRadius = 24,
   isAdaptive = false,
   height,
-  className = "rounded-shape",
+  className = 'rounded-shape',
 }) => {
   const [W, H, path, ref] = useShapeParams(isAdaptive, borderRadius, height);
 

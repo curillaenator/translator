@@ -1,6 +1,6 @@
-import { useRef, useState, useEffect, useCallback, useMemo } from "react";
+import { useRef, useState, useEffect, useCallback, useMemo } from 'react';
 
-import { UseShapeParams } from "../interfaces";
+import { UseShapeParams } from '../interfaces';
 
 export const useShapeParams: UseShapeParams = (isAdaptive, radius, height) => {
   const ref = useRef<SVGSVGElement | null>(null);
@@ -15,8 +15,8 @@ export const useShapeParams: UseShapeParams = (isAdaptive, radius, height) => {
     setShapeSize();
 
     if (isAdaptive) {
-      window.addEventListener("resize", setShapeSize);
-      return () => window.removeEventListener("resize", setShapeSize);
+      window.addEventListener('resize', setShapeSize);
+      return () => window.removeEventListener('resize', setShapeSize);
     }
   }, [isAdaptive, setShapeSize]);
 

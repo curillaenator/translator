@@ -1,13 +1,13 @@
-import React, { FC } from "react";
-import cn from "classnames";
+import React, { FC } from 'react';
+import cn from 'classnames';
 
-import { useDropdown } from "./hooks/useDropdown";
+import { useDropdown } from './hooks/useDropdown';
 
-import { Trigger, List } from "./components";
+import { Trigger, List } from './components';
 
-import { DropdownProps } from "./interfaces";
+import { DropdownProps } from './interfaces';
 
-import s from "./styles/dropdown.module.scss";
+import s from './styles/dropdown.module.scss';
 
 export const Dropdown: FC<DropdownProps> = (props) => {
   const { title, selected, list = {}, maxItems = 6, onSelect } = props;

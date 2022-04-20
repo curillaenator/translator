@@ -1,25 +1,24 @@
-import React, { FC, useEffect, useCallback } from "react";
-import { useStore } from "effector-react";
+import React, { FC, useEffect, useCallback } from 'react';
+import { useStore } from 'effector-react';
 
-import { Button } from "@src/components/button";
-import { Dropdown } from "@src/components/dropdown";
-import { Textarea } from "@src/components/textarea";
+import { Button } from '@src/components/button';
+import { Dropdown } from '@src/components/dropdown';
+import { Textarea } from '@src/components/textarea';
 
 import {
   setText,
   setSourceLanguage,
   setTargetLanguage,
   translateStore,
-  // getLanguages,
-  // getTranslate,
-} from "@src/store/translate";
+  getLanguages,
+  getTranslate,
+} from '@src/store/translate';
 
-import s from "./styles/app.module.scss";
+import s from './styles/app.module.scss';
 
 export const App: FC = () => {
   useEffect(() => {
-    console.log("render");
-    // getLanguages();
+    getLanguages();
   }, []);
 
   const { text, langugages, source, target, result } = useStore(translateStore);
@@ -33,9 +32,7 @@ export const App: FC = () => {
       target: Object.keys(target)[0],
     };
 
-    console.log(translateArgs);
-
-    // getTranslate(translateArgs);
+    getTranslate(translateArgs);
   }, [text, source, target]);
 
   return (

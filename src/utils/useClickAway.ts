@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useCallback } from "react";
+import { MutableRefObject, useEffect, useCallback } from 'react';
 
 export const useClickAway = (
   ref: MutableRefObject<HTMLDivElement | null>,
@@ -15,8 +15,8 @@ export const useClickAway = (
   );
 
   useEffect(() => {
-    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener('click', handleOutsideClick);
 
-    return () => document.removeEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener('click', handleOutsideClick);
   }, [ref, handleOutsideClick]);
 };

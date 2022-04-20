@@ -1,4 +1,4 @@
-import { ReactText } from "react";
+import { ReactText } from 'react';
 // import { ListItem } from "../interfaces";
 
 export interface TriggerProps {

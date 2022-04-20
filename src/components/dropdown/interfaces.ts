@@ -1,4 +1,4 @@
-import { ReactText } from "react";
+import { ReactText } from 'react';
 
 export interface DropdownProps {
   title: ReactText;

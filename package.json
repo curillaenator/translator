@@ -22,10 +22,6 @@
     "type": "git",
     "url": "https://github.com/curillaenator/kirillart"
   },
-  "prettier": {
-    "singleQuote": false,
-    "printWidth": 80
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

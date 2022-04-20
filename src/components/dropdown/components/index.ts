@@ -1,2 +1,2 @@
-export { Trigger } from "./Trigger";
-export { List } from "./List";
+export { Trigger } from './Trigger';
+export { List } from './List';

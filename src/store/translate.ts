@@ -1,5 +1,5 @@
-import { createStore, createEvent, createEffect } from "effector";
-import { api, TranslateArgs } from "@src/api/api";
+import { createStore, createEvent, createEffect } from 'effector';
+import { api, TranslateArgs } from '@src/api/api';
 
 interface Translate {
   pending: boolean;
@@ -13,17 +13,17 @@ interface Translate {
 const INITIAL_TRANSLATE: Translate = {
   pending: false,
   langugages: {
-    en: "english",
-    ru: "russian",
+    en: 'english',
+    ru: 'russian',
   },
   source: {
-    en: "english",
+    en: 'english',
   },
   target: {
-    ru: "russian",
+    ru: 'russian',
   },
-  text: "",
-  result: "",
+  text: '',
+  result: '',
 };
 
 // ACTIONS

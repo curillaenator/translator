@@ -1,18 +1,18 @@
-import React, { FC } from "react";
-import cn from "classnames";
+import React, { FC } from 'react';
+import cn from 'classnames';
 
-import { Shape } from "@src/components/shape";
-import { Icon } from "@src/components/icon";
+import { Shape } from '@src/components/shape';
+import { Icon } from '@src/components/icon';
 
-import { ButtonProps } from "./interfaces";
+import { ButtonProps } from './interfaces';
 
-import s from "./styles/button.module.scss";
+import s from './styles/button.module.scss';
 
 export const Button: FC<ButtonProps> = (props) => {
   const {
     iconName,
     disabled = false,
-    type = "button",
+    type = 'button',
     className,
     children,
     ...rest
@@ -29,7 +29,7 @@ export const Button: FC<ButtonProps> = (props) => {
 
       {iconName && <Icon iconName={iconName} className={s.button_icon} />}
 
-      {children || ""}
+      {children || ''}
     </button>
   );
 };
