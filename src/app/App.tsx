@@ -10,15 +10,15 @@ import {
   setSourceLanguage,
   setTargetLanguage,
   translateStore,
-  getLanguages,
-  getTranslate,
+  // getLanguages,
+  // getTranslate,
 } from '@src/store/translate';
 
 import s from './styles/app.module.scss';
 
 export const App: FC = () => {
   useEffect(() => {
-    getLanguages();
+    // getLanguages();
   }, []);
 
   const { text, langugages, source, target, result } = useStore(translateStore);
@@ -32,7 +32,9 @@ export const App: FC = () => {
       target: Object.keys(target)[0],
     };
 
-    getTranslate(translateArgs);
+    console.log(translateArgs);
+
+    // getTranslate(translateArgs);
   }, [text, source, target]);
 
   return (
