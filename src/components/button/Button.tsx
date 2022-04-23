@@ -23,7 +23,9 @@ export const Button: FC<ButtonProps> = (props) => {
       {...rest}
       disabled={disabled}
       type={type}
-      className={cn(s.button, className)}
+      className={cn(s.button, className, {
+        [s.button_disabled]: disabled,
+      })}
     >
       <Shape className={s.button_shape} isAdaptive />
 

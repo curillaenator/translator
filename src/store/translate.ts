@@ -2,7 +2,6 @@ import { createStore, createEvent, createEffect } from 'effector';
 import { api, TranslateArgs } from '@src/api/api';
 
 interface Translate {
-  pending: boolean;
   langugages: Record<string, string>;
   source: Record<string, string> | null;
   target: Record<string, string> | null;
@@ -11,16 +10,15 @@ interface Translate {
 }
 
 const INITIAL_TRANSLATE: Translate = {
-  pending: false,
   langugages: {
-    en: 'english',
-    ru: 'russian',
+    en: 'English',
+    ru: 'Russian',
   },
   source: {
-    en: 'english',
+    en: 'English',
   },
   target: {
-    ru: 'russian',
+    ru: 'Russian',
   },
   text: '',
   result: '',
@@ -38,7 +36,7 @@ export const getTranslate = createEffect(
   async (args: TranslateArgs) => await api.translate(args)
 );
 
-// STORE
+// STORES
 
 export const translateStore = createStore<Translate>(INITIAL_TRANSLATE)
   .on(setSourceLanguage, (state, source) => ({ ...state, source }))
@@ -50,10 +48,7 @@ export const translateStore = createStore<Translate>(INITIAL_TRANSLATE)
     ...state,
     langugages: langs.data,
   }))
-  .on(getLanguages.done, (state) => ({ ...state, pending: false }))
-  .on(getTranslate.pending, (state) => ({ ...state, pending: true }))
   .on(getTranslate.doneData, (state, res) => ({
     ...state,
     result: res.data.translation,
-    pending: false,
   }));

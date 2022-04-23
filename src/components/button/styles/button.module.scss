@@ -7,7 +7,10 @@ $sizes: ('2xl', 'xl', 'l', 'm', 's', 'xs');
   --button-gap: 14px;
   --button-padding: 0 14px;
   --button-background: var(--palette-indigo-500);
+  --button-background-hover: var(--palette-indigo-400);
+  --button-background-acrive: var(--palette-indigo-600);
   --button-shadow-color: transparent;
+  --button-shadow-color-hover: var(--palette-indigo-400);
   --button-border-radius: 14px;
   --button-font-size: 16px;
   --button-font-color: var(--palette-gray-200);
@@ -35,13 +38,22 @@ $sizes: ('2xl', 'xl', 'l', 'm', 's', 'xs');
   font-weight: 600;
   font-size: var(--button-font-size);
 
+  &_disabled {
+    --button-cursor: default;
+    --button-background: var(--palette-gray-200);
+    --button-background-hover: var(--palette-gray-200);
+    --button-background-active: var(--palette-gray-200);
+    --button-shadow-color-hover: transparent;
+    --button-font-color: var(--palette-gray-500);
+  }
+
   &:hover {
-    --button-background: var(--palette-indigo-400);
-    --button-shadow-color: var(--palette-indigo-400);
+    --button-background: var(--button-background-hover);
+    --button-shadow-color: var(--button-shadow-color-hover);
   }
 
   &:active {
-    --button-background: var(--palette-indigo-600);
+    --button-background: var(--button-background-active);
     --button-shadow-color: transparent;
   }
 

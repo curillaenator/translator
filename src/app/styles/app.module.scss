@@ -20,7 +20,7 @@
 
   .footings {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     width: 100%;
     z-index: 100;
   }
@@ -38,7 +38,7 @@
       background-color: var(--palette-gray-700);
       color: var(--palette-gray-200);
       padding: 16px;
-      border-radius: 0 16px 16px 0;
+      border-radius: 16px;
     }
   }
 }

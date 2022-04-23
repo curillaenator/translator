@@ -1,27 +1,37 @@
-.textarea {
-  width: 100%;
-  background-color: var(--palette-gray-700);
-  outline: 2px solid var(--palette-gray-200);
-  outline-offset: -2px;
-  color: var(--palette-gray-200);
+.wrapper {
+  --textarea-border-color: var(--palette-gray-200);
+
   padding: 16px;
-  border-radius: 16px 0 0 16px;
-  resize: none;
-  transition: 0.08s linear;
+  border-radius: 16px;
+  background-color: var(--palette-gray-700);
+  border: 2px solid var(--textarea-border-color);
 
-  &:focus {
-    outline: 2px solid var(--palette-indigo-500);
-  }
+  .textarea {
+    width: 100%;
+    outline: none;
+    background-color: transparent;
+    color: var(--palette-gray-200);
+    overflow: hidden;
 
-  &::-webkit-scrollbar {
-    width: 0.25rem;
-    margin-left: 0.25rem;
-    border-radius: 0.25rem;
-    background-color: var(--palette-gray-300);
-  }
+    resize: none;
+    transition: 0.08s linear;
 
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--palette-gray-900);
-    border-radius: 0.25rem;
+    &:focus {
+      --textarea-border-color: var(--palette-indigo-500);
+
+      outline: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0.25rem;
+      margin-left: 0.25rem;
+      border-radius: 0.25rem;
+      background-color: var(--palette-gray-300);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--palette-gray-900);
+      border-radius: 0.25rem;
+    }
   }
 }

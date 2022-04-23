@@ -19,7 +19,7 @@ export const useDropdown = (list: Record<string, string>) => {
   const filteredList = !!search
     ? Object.fromEntries(
         Object.entries(list).filter(([key, value]) =>
-          (key + value).includes(search)
+          (key + value).toLowerCase().includes(search)
         )
       )
     : list;

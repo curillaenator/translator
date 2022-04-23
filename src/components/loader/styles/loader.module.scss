@@ -1,0 +1,12 @@
+.loader {
+  width: 40px;
+  height: 40px;
+
+  .primaryColor {
+    fill: var(--palette-indigo-500);
+  }
+
+  .neutralColor {
+    fill: var(--palette-gray-200);
+  }
+}

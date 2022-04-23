@@ -4,24 +4,27 @@ import { useStore } from 'effector-react';
 import { Button } from '@src/components/button';
 import { Dropdown } from '@src/components/dropdown';
 import { Textarea } from '@src/components/textarea';
+import { Scrollbar } from '@src/components/scrollbar';
+import { Loader } from '@src/components/loader';
 
 import {
   setText,
   setSourceLanguage,
   setTargetLanguage,
   translateStore,
-  // getLanguages,
-  // getTranslate,
+  getLanguages,
+  getTranslate,
 } from '@src/store/translate';
 
 import s from './styles/app.module.scss';
 
 export const App: FC = () => {
   useEffect(() => {
-    // getLanguages();
+    getLanguages();
   }, []);
 
   const { text, langugages, source, target, result } = useStore(translateStore);
+  const translatePending = useStore(getTranslate.pending);
 
   const handleTranslate = useCallback(() => {
     if (!source || !target || !text) return;
@@ -32,9 +35,7 @@ export const App: FC = () => {
       target: Object.keys(target)[0],
     };
 
-    console.log(translateArgs);
-
-    // getTranslate(translateArgs);
+    getTranslate(translateArgs);
   }, [text, source, target]);
 
   return (
@@ -59,14 +60,19 @@ export const App: FC = () => {
         <Textarea
           value={text}
           placeholder="Type here your source text"
+          minRows={8}
           onChange={setText}
           onBlur={handleTranslate}
         />
 
-        <div className={s.result}>{result}</div>
+        <div className={s.result}>
+          <Scrollbar maxHeight={336}>{result}</Scrollbar>
+        </div>
       </div>
 
       <div className={s.footings}>
+        <div>{translatePending && <Loader />}</div>
+
         <Button iconName="translate" disabled={!text} onClick={handleTranslate}>
           Translate
         </Button>
