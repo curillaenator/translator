@@ -2,9 +2,8 @@ import React, { forwardRef, useCallback } from 'react';
 
 import { Scrollbar } from '@src/components/scrollbar';
 
-import { ListProps } from './interfaces';
-
 import s from '../styles/dropdown.module.scss';
+import { ListProps } from './interfaces';
 
 const ITEM_H = 40;
 const PADDING_H = 16;
@@ -27,9 +26,9 @@ const List = forwardRef<HTMLDivElement, ListProps>((props, ref) => {
       ref={ref}
     >
       <Scrollbar>
-        {Object.entries(list).map(([key, value]) => (
+        {Object.entries(list).map(([key, value], i) => (
           <button
-            key={value}
+            key={`${value}${i}`}
             className={s.list_item}
             onClick={() => handleClick({ [key]: value })}
             type="button"

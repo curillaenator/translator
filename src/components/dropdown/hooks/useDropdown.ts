@@ -1,7 +1,8 @@
 import { useState, useRef, useCallback } from 'react';
-// import { useClickAway } from "@src/utils";
+import { useClickAway } from '@src/utils';
 
 export const useDropdown = (list: Record<string, string>) => {
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,10 +24,11 @@ export const useDropdown = (list: Record<string, string>) => {
       )
     : list;
 
-  // useClickAway(listRef, onClose, !isOpen);
+  useClickAway([listRef, triggerRef], onClose, !isOpen);
 
   return {
     listRef,
+    triggerRef,
     isOpen,
     search,
     filteredList,

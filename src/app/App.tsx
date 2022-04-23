@@ -24,7 +24,7 @@ export const App: FC = () => {
   const { text, langugages, source, target, result } = useStore(translateStore);
 
   const handleTranslate = useCallback(() => {
-    if (!source || !target) return;
+    if (!source || !target || !text) return;
 
     const translateArgs = {
       text,
@@ -53,14 +53,23 @@ export const App: FC = () => {
           list={langugages}
           onSelect={setTargetLanguage}
         />
-
-        <Button onClick={handleTranslate}>Translate</Button>
       </div>
 
       <div className={s.framework}>
-        <Textarea value={text} onChange={setText} />
+        <Textarea
+          value={text}
+          placeholder="Type here your source text"
+          onChange={setText}
+          onBlur={handleTranslate}
+        />
 
         <div className={s.result}>{result}</div>
+      </div>
+
+      <div className={s.footings}>
+        <Button iconName="translate" disabled={!text} onClick={handleTranslate}>
+          Translate
+        </Button>
       </div>
     </div>
   );

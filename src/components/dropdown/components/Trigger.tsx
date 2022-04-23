@@ -1,13 +1,12 @@
-import React, { FC, useRef, useEffect } from 'react';
+import React, { useRef, useEffect, forwardRef } from 'react';
 
 import { Shape } from '@src/components/shape';
 import { Icon } from '@src/components/icon';
 
+import s from '../styles/dropdown.module.scss';
 import { TriggerProps } from './interfaces';
 
-import s from '../styles/dropdown.module.scss';
-
-export const Trigger: FC<TriggerProps> = (props) => {
+const Trigger = forwardRef<HTMLButtonElement, TriggerProps>((props, ref) => {
   const { title, isOpen, search, onSearch, onOpen, onClose } = props;
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -18,6 +17,7 @@ export const Trigger: FC<TriggerProps> = (props) => {
 
   return (
     <button
+      ref={ref}
       className={s.trigger}
       onClick={isOpen ? onClose : onOpen}
       type="button"
@@ -49,4 +49,8 @@ export const Trigger: FC<TriggerProps> = (props) => {
       </svg>
     </button>
   );
-};
+});
+
+Trigger.displayName = 'Trigger';
+
+export { Trigger };

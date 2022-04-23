@@ -1,11 +1,27 @@
 .textarea {
   width: 100%;
-  min-height: 300px;
-  background-color: transparent;
+  background-color: var(--palette-gray-700);
   outline: 2px solid var(--palette-gray-200);
-  outline-offset: 2px;
+  outline-offset: -2px;
   color: var(--palette-gray-200);
   padding: 16px;
-  border-radius: 16px;
+  border-radius: 16px 0 0 16px;
   resize: none;
+  transition: 0.08s linear;
+
+  &:focus {
+    outline: 2px solid var(--palette-indigo-500);
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+    margin-left: 0.25rem;
+    border-radius: 0.25rem;
+    background-color: var(--palette-gray-300);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--palette-gray-900);
+    border-radius: 0.25rem;
+  }
 }

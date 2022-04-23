@@ -2,16 +2,16 @@ $colors: ('primary', 'secondary', 'positive', 'attention', 'negative');
 $sizes: ('2xl', 'xl', 'l', 'm', 's', 'xs');
 
 .button {
-  --button-height: 56px;
+  --button-height: 40px;
   --button-width: fit-content;
-  --button-gap: 20px;
-  --button-padding: 0 20px;
+  --button-gap: 14px;
+  --button-padding: 0 14px;
   --button-background: var(--palette-indigo-500);
   --button-shadow-color: transparent;
-  --button-border-radius: 22px;
+  --button-border-radius: 14px;
   --button-font-size: 16px;
   --button-font-color: var(--palette-gray-200);
-  --button-icon-size: 24px;
+  --button-icon-size: 16px;
   --button-direction: row;
   --button-cursor: pointer;
   --button-transition: 0.08s linear;

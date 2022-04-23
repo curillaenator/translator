@@ -49,8 +49,8 @@ export const translateStore = createStore<Translate>(INITIAL_TRANSLATE)
   .on(getLanguages.doneData, (state, langs) => ({
     ...state,
     langugages: langs.data,
-    pending: false,
   }))
+  .on(getLanguages.done, (state) => ({ ...state, pending: false }))
   .on(getTranslate.pending, (state) => ({ ...state, pending: true }))
   .on(getTranslate.doneData, (state, res) => ({
     ...state,
