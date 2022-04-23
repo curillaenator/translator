@@ -4,7 +4,7 @@ const base = axios.create({
   baseURL: 'https://google-translate20.p.rapidapi.com',
   headers: {
     'X-RapidAPI-Host': 'google-translate20.p.rapidapi.com',
-    'X-RapidAPI-Key': 'bf0cc8809fmsh7ea2aa3b64ea954p18a4d1jsne0cc0aff369e',
+    'X-RapidAPI-Key': process.env.RAPIDAPI_KEY as string,
   },
 });
 
