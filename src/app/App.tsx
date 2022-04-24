@@ -16,7 +16,6 @@ import {
   getTranslate,
 } from '@src/store/translate';
 
-import bg from '../assets/langs.jpeg';
 import s from './styles/app.module.scss';
 
 export const App: FC = () => {
@@ -41,7 +40,11 @@ export const App: FC = () => {
 
   return (
     <div className={s.app}>
-      <img className={s.background} src={bg} alt="Background" />
+      <img
+        className={s.background}
+        src="https://idsb.tmgrup.com.tr/ly/uploads/images/2021/02/23/95045.jpg"
+        alt="Background"
+      />
 
       <div className={s.framework}>
         <div className={s.block}>
