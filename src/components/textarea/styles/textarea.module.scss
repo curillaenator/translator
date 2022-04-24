@@ -5,6 +5,11 @@
   border-radius: 16px;
   background-color: var(--palette-gray-700);
   border: 2px solid var(--textarea-border-color);
+  transition: border 0.08s linear;
+
+  &_focused {
+    --textarea-border-color: var(--palette-blue-500);
+  }
 
   .textarea {
     width: 100%;
@@ -17,8 +22,6 @@
     transition: 0.08s linear;
 
     &:focus {
-      --textarea-border-color: var(--palette-indigo-500);
-
       outline: none;
     }
 

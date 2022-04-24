@@ -12,13 +12,12 @@ interface Translate {
 const INITIAL_TRANSLATE: Translate = {
   langugages: {
     en: 'English',
-    ru: 'Russian',
   },
   source: {
     en: 'English',
   },
   target: {
-    ru: 'Russian',
+    en: 'English',
   },
   text: '',
   result: '',
@@ -29,7 +28,8 @@ const INITIAL_TRANSLATE: Translate = {
 export const setSourceLanguage = createEvent<Record<string, string>>();
 export const setTargetLanguage = createEvent<Record<string, string>>();
 export const setText = createEvent<string>();
-export const setResult = createEvent<string>();
+
+// ASYNC ACTIONS
 
 export const getLanguages = createEffect(async () => await api.getLanguages());
 export const getTranslate = createEffect(
@@ -42,8 +42,6 @@ export const translateStore = createStore<Translate>(INITIAL_TRANSLATE)
   .on(setSourceLanguage, (state, source) => ({ ...state, source }))
   .on(setTargetLanguage, (state, target) => ({ ...state, target }))
   .on(setText, (state, text) => ({ ...state, text }))
-  .on(setResult, (state, result) => ({ ...state, result }))
-  .on(getLanguages.pending, (state) => ({ ...state, pending: true }))
   .on(getLanguages.doneData, (state, langs) => ({
     ...state,
     langugages: langs.data,

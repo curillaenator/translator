@@ -23,9 +23,9 @@
 
   &_active {
     --icon-translate: rotate(180deg);
-    --trigger-background: var(--palette-indigo-500);
+    --trigger-background: var(--palette-blue-500);
     --trigger-text-color: var(--palette-gray-200);
-    --trigger-shadow-color: var(--palette-indigo-500);
+    --trigger-shadow-color: var(--palette-blue-500);
   }
 
   .trigger {
